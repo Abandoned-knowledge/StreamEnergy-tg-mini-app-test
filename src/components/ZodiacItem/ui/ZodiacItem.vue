@@ -6,12 +6,14 @@ interface props {
 }
 const props = defineProps<props>();
 
+const { locale } = useI18n();
 const horoscopeStore = useHoroscopeStore();
-const langStore = useLangStore();
 
 const style = { background: `linear-gradient(to right bottom, ${props.colors.light}, ${props.colors.dark})` };
 
-const zodiacName = computed(() => (langStore.lang == "en" ? props.name.en : props.name.ru));
+const zodiacName = computed(() => {
+  return locale.value == "en" ? props.name.en : props.name.ru;
+});
 </script>
 
 <template>

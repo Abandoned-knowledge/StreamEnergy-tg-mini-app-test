@@ -1,5 +1,8 @@
+import { useI18n } from "#imports";
+
 export const useLangStore = defineStore("lang", () => {
-  const lang = ref("en");
+  const { locale } = useI18n();
+  const lang = ref(locale);
 
   function changeLang(langCode: string) {
     return (lang.value = langCode);

@@ -1,21 +1,11 @@
 <script setup lang="ts">
 import LanguageSwitcher from "./languageSwitcher.vue";
-
-const { useWebApp } = await import("vue-tg");
-const { initDataUnsafe } = useWebApp();
-const langStore = useLangStore();
-
-onMounted(() => {
-  if (initDataUnsafe.user?.language_code) langStore.changeLang(initDataUnsafe.user.language_code);
-});
 </script>
 
 <template>
-
   <PopupsHoroscope />
   <div>
-    <p class="title" v-if="langStore.lang == 'en'">Daily Horoscope</p>
-    <p class="title" v-else>Гороскоп на сегодня</p>
+    <p class="title">{{ $t("daily_text") }}</p>
   </div>
 
   <div class="buttons">
