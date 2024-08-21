@@ -6,6 +6,8 @@ const { BackButton } = await import("vue-tg");
 <template>
   <dialog id="myDialog" class="dialog">
     <p class="dialog__text">{{ horoscopeStore.text }}</p>
+
+    <button @click="horoscopeStore.close" class="dialog__button">close</button>
   </dialog>
 
   <BackButton @click="horoscopeStore.close" />
