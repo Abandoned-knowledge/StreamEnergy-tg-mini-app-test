@@ -1,16 +1,21 @@
 <script setup lang="ts">
 const horoscopeStore = useHoroscopeStore();
-const { BackButton } = await import("vue-tg");
+const { BackButton, useWebApp } = await import("vue-tg");
+const { close: closeTg } = useWebApp();
+function handleBUtton() {
+  horoscopeStore.close();
+  if (!horoscopeStore.isOpen) closeTg();
+}
 </script>
 
 <template>
   <dialog id="myDialog" class="dialog">
     <p class="dialog__text">{{ horoscopeStore.text }}</p>
 
-    <button @click="horoscopeStore.close" class="dialog__button">{{ $t('button_close') }}</button>
+    <button @click="handleBUtton" class="dialog__button">{{ $t("button_close") }}</button>
   </dialog>
 
-  <BackButton @click="horoscopeStore.close" />
+  <BackButton @click="" />
 </template>
 
 <style lang="scss" scoped>
