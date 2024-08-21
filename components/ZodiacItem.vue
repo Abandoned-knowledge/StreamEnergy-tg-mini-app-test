@@ -42,8 +42,6 @@ const zodiacName = computed(() => (langStore.lang == "en" ? props.name.en : prop
   </button>
 
   <dialog ref="dialog" class="dialog">
-    <p class="dialog__title" v-if="langStore.lang == 'en'">Daily Horoscope</p>
-    <p class="dialog__title" v-else>Гороскоп на сегодня</p>
     <p class="dialog__text">{{ horoscope }}</p>
   </dialog>
 
@@ -55,12 +53,6 @@ const zodiacName = computed(() => (langStore.lang == "en" ? props.name.en : prop
   width: 70%;
   border: 1px solid #888888;
   border-radius: 10px;
-
-  &__title {
-    font-size: 20px;
-    text-align: center;
-    font-weight: 600;
-  }
 
   &__text {
     word-spacing: 110%;

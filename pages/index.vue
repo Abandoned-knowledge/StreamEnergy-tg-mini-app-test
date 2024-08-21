@@ -16,6 +16,11 @@ onMounted(() => {
 </script>
 
 <template>
+  <div>
+    <p class="title" v-if="langStore.lang == 'en'">Daily Horoscope</p>
+    <p class="title" v-else>Гороскоп на сегодня</p>
+  </div>
+
   <div class="buttons">
     <ZodiacItem v-for="zodiac in zodiacs" :colors="zodiac.color" :icon="zodiac.icon" :name="zodiac.name" />
   </div>
