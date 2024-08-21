@@ -5,6 +5,21 @@ export default defineNuxtConfig({
 
   css: ["~/app/css/normalize.css", "~/app/css/main.css"],
 
+  srcDir: "src/",
+
+  dir: {
+    layouts: "./app/layouts/",
+  },
+
+  imports: {
+    dirs: [
+      'app/composables',
+      'shared/api',
+      'shared/icons',
+      'shared/types',
+    ],
+  },
+
   app: {
     head: {
       link: [
