@@ -1,6 +1,3 @@
-import type { response } from "@/shared/types";
-import { useLangStore } from "../store/language";
-
 export async function fetchSignData(sign: string) {
   const langStore = useLangStore();
   return await $fetch<response>("https://poker247tech.ru/get_horoscope/", {
