@@ -7,16 +7,20 @@ function handleInput(code: string) {
   store.lang = code;
 }
 
-const languages = [
-  {
-    code: "en",
-    isSelect: locale.value == "en" ? true : false,
-  },
-  {
-    code: "ru",
-    isSelect: locale.value == "ru" ? true : false,
-  },
-];
+const languages = ref();
+
+onMounted(() => {
+  languages.value = [
+    {
+      code: "en",
+      isSelect: locale.value == "en",
+    },
+    {
+      code: "ru",
+      isSelect: locale.value == "ru",
+    },
+  ];
+});
 </script>
 
 <template>
