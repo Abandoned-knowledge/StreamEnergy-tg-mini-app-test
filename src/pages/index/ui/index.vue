@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import LanguageSwitcher from "./languageSwitcher.vue";
+const { useWebApp } = await import("vue-tg");
+const { initDataUnsafe } = useWebApp();
+const { setLocale } = useI18n();
+
+function setLang() {
+  return initDataUnsafe.user?.language_code == "ru" ? "ru" : "en";
+}
+
+setLocale(setLang());
 </script>
 
 <template>
