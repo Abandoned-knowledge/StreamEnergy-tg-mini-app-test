@@ -25,9 +25,7 @@ function handleBUtton() {
   border-radius: 10px;
 
   &__text {
-    word-spacing: 110%;
     line-height: 150%;
-    letter-spacing: 120%;
     height: 300px;
     overflow: scroll;
   }
